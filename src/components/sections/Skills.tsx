@@ -13,7 +13,7 @@ const skillCategories = [
   },
   {
     title: "Database",
-    skills: ["Oracle SQL"],
+    skills: ["Oracle SQL", "MongoDB", "MySQL"],
   },
   {
     title: "Tools & Workflow",

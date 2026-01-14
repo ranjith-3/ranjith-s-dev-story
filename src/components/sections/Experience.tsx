@@ -6,7 +6,7 @@ import { Briefcase, GraduationCap } from "lucide-react";
 const experiences = [
   {
     icon: Briefcase,
-    title: "Software Engineer",
+    title: "Trainee Programmer",
     company: "Kumaran Systems",
     period: "Current Role",
     description: `This is where things got real. I'm part of a team that's modernizing enterprise applications—taking legacy Java Swing and Spring MVC systems and transforming them into sleek Angular frontends backed by robust Spring Boot APIs.

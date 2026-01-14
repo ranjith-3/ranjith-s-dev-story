@@ -8,7 +8,7 @@ const projects = [
     icon: Layers,
     title: "Enterprise UI Modernization Platform",
     description: "Migrated legacy Java Swing applications to modern Angular interfaces, improving user experience and system maintainability.",
-    tags: ["Angular", "TypeScript", "Material UI", "Spring Boot"],
+    tags: ["Angular", "ReactJS", "TypeScript", "Material UI", "Spring Boot"],
   },
   {
     icon: Server,
@@ -25,8 +25,8 @@ const projects = [
   {
     icon: Workflow,
     title: "Internal Workflow Automation",
-    description: "Created automation tools to streamline internal processes, reducing manual effort and improving team productivity.",
-    tags: ["Node.js", "React", "REST APIs"],
+    description: "Automated employee check-in and check-out system for office attendance tracking through an internal portal.",
+    tags: ["Spring Boot"],
   },
 ];
 
