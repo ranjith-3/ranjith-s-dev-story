@@ -8,23 +8,27 @@ const contactLinks = [
     icon: Mail,
     label: "Email",
     href: "mailto:ranjith301nrv@gmail.com",
+    mobileOnly: false,
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
     href: "https://linkedin.com/in/ranjith-03",
     external: true,
+    mobileOnly: false,
   },
   {
     icon: Phone,
     label: "Phone",
     href: "tel:+916382935538",
+    mobileOnly: true,
   },
   {
     icon: FileDown,
     label: "Resume",
     href: "/resume.pdf",
     download: "Ranjith_S_Resume.pdf",
+    mobileOnly: false,
   },
 ];
 
@@ -70,7 +74,7 @@ export function Contact() {
               transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
               whileHover={{ scale: 1.1, y: -5 }}
               whileTap={{ scale: 0.95 }}
-              className="group flex h-16 w-16 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-lg hover:shadow-primary/20"
+              className={`group flex h-16 w-16 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-lg hover:shadow-primary/20 ${link.mobileOnly ? "md:hidden" : ""}`}
               aria-label={link.label}
             >
               <link.icon className="h-6 w-6" />
