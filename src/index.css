@@ -110,77 +110,7 @@
     box-shadow: 0 0 20px -5px hsl(var(--glow) / 0.2);
   }
 
-  .glow-lg {
-    box-shadow: 0 0 60px -15px hsl(var(--glow) / 0.25);
-  }
-
   .section-padding {
     @apply px-4 py-20 md:px-8 lg:py-28;
-  }
-
-  /* Background patterns */
-  .bg-grid-pattern {
-    background-image: 
-      linear-gradient(to right, hsl(var(--foreground) / 0.1) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(var(--foreground) / 0.1) 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
-
-  .bg-dot-pattern {
-    background-image: radial-gradient(circle, hsl(var(--foreground) / 0.15) 1px, transparent 1px);
-    background-size: 24px 24px;
-  }
-
-  .bg-noise {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  }
-
-  .bg-radial-vignette {
-    background: radial-gradient(ellipse at center, transparent 0%, hsl(var(--background) / 0.4) 100%);
-  }
-
-  /* Section backgrounds */
-  .section-bg-primary {
-    @apply relative;
-    background: linear-gradient(
-      180deg,
-      hsl(var(--background)) 0%,
-      hsl(var(--secondary) / 0.3) 50%,
-      hsl(var(--background)) 100%
-    );
-  }
-
-  .section-bg-alternate {
-    @apply relative;
-    background: linear-gradient(
-      135deg,
-      hsl(var(--background)) 0%,
-      hsl(var(--secondary) / 0.2) 50%,
-      hsl(var(--background)) 100%
-    );
-  }
-
-  /* Glassmorphism */
-  .glass {
-    @apply backdrop-blur-md;
-    background: hsl(var(--card) / 0.7);
-    border: 1px solid hsl(var(--border) / 0.5);
-  }
-
-  .glass-subtle {
-    @apply backdrop-blur-sm;
-    background: hsl(var(--card) / 0.5);
-  }
-
-  /* Card hover glow effect */
-  .card-glow {
-    @apply transition-shadow duration-500;
-  }
-  
-  .card-glow:hover {
-    box-shadow: 
-      0 0 0 1px hsl(var(--primary) / 0.1),
-      0 4px 20px -4px hsl(var(--primary) / 0.15),
-      0 12px 40px -8px hsl(var(--primary) / 0.1);
   }
 }

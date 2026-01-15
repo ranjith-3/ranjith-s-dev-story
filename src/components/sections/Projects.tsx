@@ -50,7 +50,7 @@ export function Projects() {
   };
 
   return (
-    <section id="projects" className="section-padding section-bg-primary" ref={ref}>
+    <section id="projects" className="section-padding bg-secondary/30" ref={ref}>
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -77,11 +77,10 @@ export function Projects() {
               variants={itemVariants}
               transition={{ duration: 0.5 }}
               whileHover={{ y: -5 }}
-              className="card-glow group relative overflow-hidden rounded-xl border border-border bg-card/80 backdrop-blur-sm p-6 transition-all duration-500 hover:border-primary/50"
+              className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-xl"
             >
-              {/* Enhanced glow effect on hover */}
-              <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br from-primary/10 to-primary/5 opacity-0 blur-3xl transition-all duration-500 group-hover:opacity-100 group-hover:scale-150" />
-              <div className="absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-primary/5 opacity-0 blur-2xl transition-all duration-500 group-hover:opacity-100" />
+              {/* Glow effect on hover */}
+              <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-primary/5 opacity-0 blur-3xl transition-opacity group-hover:opacity-100" />
 
               <div className="relative">
                 <div className="mb-4 flex items-center justify-between">

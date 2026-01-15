@@ -41,7 +41,7 @@ export function Skills() {
   };
 
   return (
-    <section id="skills" className="section-padding section-bg-primary" ref={ref}>
+    <section id="skills" className="section-padding bg-secondary/30" ref={ref}>
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -67,7 +67,7 @@ export function Skills() {
               key={category.title}
               variants={itemVariants}
               transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-              className="card-glow rounded-xl border border-border bg-card/80 backdrop-blur-sm p-6 transition-all hover:border-primary/50"
+              className="rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg"
             >
               <h4 className="mb-4 text-lg font-semibold text-foreground">
                 {category.title}

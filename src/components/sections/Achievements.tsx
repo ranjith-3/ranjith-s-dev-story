@@ -31,7 +31,7 @@ export function Achievements() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="section-padding section-bg-alternate" ref={ref}>
+    <section className="section-padding" ref={ref}>
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -54,7 +54,7 @@ export function Achievements() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="card-glow group rounded-xl border border-border bg-card/80 backdrop-blur-sm p-6 text-center transition-all duration-500 hover:border-primary/50"
+              className="group rounded-xl border border-border bg-card p-6 text-center transition-all hover:border-primary/50 hover:shadow-lg"
             >
               <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20">
                 <achievement.icon className="h-7 w-7 text-primary" />

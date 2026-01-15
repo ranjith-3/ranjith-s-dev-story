@@ -12,74 +12,32 @@ export function Hero() {
 
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4">
-      {/* Hero-specific enhanced background */}
+      {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Gradient orbs with slow ambient movement */}
         <motion.div
-          className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-primary/20 to-primary/5 blur-[80px]"
+          className="absolute -right-40 -top-40 h-96 w-96 rounded-full bg-primary/10 blur-3xl"
           animate={{
-            scale: [1, 1.15, 1],
-            opacity: [0.4, 0.6, 0.4],
-            x: [0, 30, 0],
-            y: [0, -20, 0],
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
           }}
           transition={{
-            duration: 15,
+            duration: 8,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         />
         <motion.div
-          className="absolute -bottom-32 -left-32 h-[400px] w-[400px] rounded-full bg-gradient-to-tr from-primary/15 to-orange-500/10 blur-[60px]"
+          className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-primary/10 blur-3xl"
           animate={{
-            scale: [1.1, 1, 1.1],
+            scale: [1.2, 1, 1.2],
             opacity: [0.5, 0.3, 0.5],
-            x: [0, -20, 0],
-            y: [0, 30, 0],
           }}
           transition={{
-            duration: 18,
+            duration: 8,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         />
-        
-        {/* Subtle geometric lines - tech wireframe feel */}
-        <svg className="absolute inset-0 h-full w-full opacity-[0.03] dark:opacity-[0.05]" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="hero-grid" width="80" height="80" patternUnits="userSpaceOnUse">
-              <path d="M 80 0 L 0 0 0 80" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-foreground" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#hero-grid)" />
-        </svg>
-        
-        {/* Floating abstract shapes */}
-        <motion.div
-          className="absolute right-1/4 top-1/4 h-32 w-32 rounded-full border border-primary/10 dark:border-primary/20"
-          animate={{
-            rotate: 360,
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            rotate: { duration: 30, repeat: Infinity, ease: "linear" },
-            scale: { duration: 8, repeat: Infinity, ease: "easeInOut" },
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/3 left-1/4 h-20 w-20 rounded-lg border border-primary/5 dark:border-primary/10"
-          animate={{
-            rotate: -360,
-            y: [0, 20, 0],
-          }}
-          transition={{
-            rotate: { duration: 25, repeat: Infinity, ease: "linear" },
-            y: { duration: 10, repeat: Infinity, ease: "easeInOut" },
-          }}
-        />
-        
-        {/* Subtle center glow */}
-        <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-[100px]" />
       </div>
 
       <div className="container relative z-10 mx-auto text-center">

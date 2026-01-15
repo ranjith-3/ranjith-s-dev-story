@@ -37,13 +37,8 @@ export function Contact() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="contact" className="section-padding relative overflow-hidden" ref={ref}>
-      {/* Subtle background glow for contact section */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-primary/5 blur-[100px]" />
-      </div>
-      
-      <div className="container relative z-10 mx-auto max-w-4xl text-center">
+    <section id="contact" className="section-padding" ref={ref}>
+      <div className="container mx-auto max-w-4xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -79,7 +74,7 @@ export function Contact() {
               transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
               whileHover={{ scale: 1.1, y: -5 }}
               whileTap={{ scale: 0.95 }}
-              className={`group relative flex h-16 w-16 items-center justify-center rounded-full border border-border bg-card/80 backdrop-blur-sm text-muted-foreground transition-all duration-300 hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-lg hover:shadow-primary/30 ${link.mobileOnly ? "md:hidden" : ""}`}
+              className={`group flex h-16 w-16 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-lg hover:shadow-primary/20 ${link.mobileOnly ? "md:hidden" : ""}`}
               aria-label={link.label}
             >
               <link.icon className="h-6 w-6" />
