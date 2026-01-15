@@ -50,7 +50,7 @@ export function Projects() {
   };
 
   return (
-    <section id="projects" className="section-padding bg-secondary/30" ref={ref}>
+    <section id="projects" className="section-padding section-bg-elevated" ref={ref}>
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -77,14 +77,15 @@ export function Projects() {
               variants={itemVariants}
               transition={{ duration: 0.5 }}
               whileHover={{ y: -5 }}
-              className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-xl"
+              className="group relative overflow-hidden rounded-xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-card/80 hover:shadow-xl hover:shadow-primary/10"
             >
               {/* Glow effect on hover */}
-              <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-primary/5 opacity-0 blur-3xl transition-opacity group-hover:opacity-100" />
+              <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-primary/5 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="absolute -left-10 -bottom-10 h-32 w-32 rounded-full bg-primary/3 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
 
               <div className="relative">
                 <div className="mb-4 flex items-center justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
                     <project.icon className="h-6 w-6 text-primary" />
                   </div>
                   <motion.div
@@ -107,7 +108,7 @@ export function Projects() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-muted-foreground"
+                      className="rounded-full bg-secondary/80 px-2.5 py-1 text-xs font-medium text-muted-foreground transition-colors group-hover:bg-secondary"
                     >
                       {tag}
                     </span>
