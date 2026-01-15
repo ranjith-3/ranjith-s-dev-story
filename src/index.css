@@ -5,12 +5,14 @@
 /* Ranjith S Portfolio - Design System
    Dark mode first, Warm Orange accent (#f97316)
    All colors in HSL format
+   Modern layered backgrounds with subtle tech patterns
 */
 
 @layer base {
   :root {
     /* Light mode */
     --background: 0 0% 98%;
+    --background-secondary: 220 14% 96%;
     --foreground: 224 71% 4%;
 
     --card: 0 0% 100%;
@@ -44,26 +46,32 @@
     --gradient-start: 24 95% 53%;
     --gradient-end: 32 98% 50%;
     --glow: 24 95% 53%;
+    
+    /* Background layers */
+    --bg-gradient-from: 220 20% 97%;
+    --bg-gradient-to: 220 14% 94%;
+    --bg-accent-glow: 24 95% 53%;
   }
 
   .dark {
     /* Dark mode - Default */
     --background: 224 71% 4%;
+    --background-secondary: 224 50% 6%;
     --foreground: 213 31% 91%;
 
-    --card: 224 71% 7%;
+    --card: 224 50% 7%;
     --card-foreground: 213 31% 91%;
 
-    --popover: 224 71% 7%;
+    --popover: 224 50% 7%;
     --popover-foreground: 213 31% 91%;
 
     --primary: 24 95% 53%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 28% 17%;
+    --secondary: 215 28% 12%;
     --secondary-foreground: 213 31% 91%;
 
-    --muted: 215 28% 17%;
+    --muted: 215 28% 12%;
     --muted-foreground: 215 20% 65%;
 
     --accent: 24 95% 53%;
@@ -72,14 +80,19 @@
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 28% 17%;
-    --input: 215 28% 17%;
+    --border: 215 28% 14%;
+    --input: 215 28% 14%;
     --ring: 24 95% 53%;
 
     /* Custom tokens */
     --gradient-start: 24 95% 53%;
     --gradient-end: 32 98% 50%;
     --glow: 24 95% 53%;
+    
+    /* Background layers */
+    --bg-gradient-from: 224 71% 3%;
+    --bg-gradient-to: 224 50% 6%;
+    --bg-accent-glow: 24 95% 53%;
   }
 }
 
@@ -94,6 +107,17 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(var(--bg-accent-glow) / 0.03), transparent),
+      linear-gradient(to bottom, hsl(var(--bg-gradient-from)), hsl(var(--bg-gradient-to)));
+    background-attachment: fixed;
+  }
+  
+  .dark body {
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(var(--bg-accent-glow) / 0.08), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 100%, hsl(var(--bg-accent-glow) / 0.04), transparent),
+      linear-gradient(to bottom, hsl(var(--bg-gradient-from)), hsl(var(--bg-gradient-to)));
   }
 }
 
@@ -112,5 +136,89 @@
 
   .section-padding {
     @apply px-4 py-20 md:px-8 lg:py-28;
+  }
+  
+  /* Grid pattern for tech aesthetic */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(hsl(var(--foreground) / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--foreground) / 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  
+  /* Dot pattern */
+  .bg-dot-pattern {
+    background-image: radial-gradient(hsl(var(--foreground) / 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  
+  /* Noise texture using SVG */
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+  
+  /* Radial gradient utility */
+  .bg-gradient-radial {
+    background: radial-gradient(var(--tw-gradient-stops));
+  }
+  
+  /* Section backgrounds */
+  .section-bg-elevated {
+    @apply relative;
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--secondary) / 0.3),
+      hsl(var(--secondary) / 0.5),
+      hsl(var(--secondary) / 0.3)
+    );
+  }
+  
+  .section-bg-elevated::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
+    background: 
+      linear-gradient(90deg, transparent, hsl(var(--border) / 0.5) 50%, transparent) top,
+      linear-gradient(90deg, transparent, hsl(var(--border) / 0.3) 50%, transparent) bottom;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+  }
+  
+  /* Glassmorphism card */
+  .glass {
+    @apply backdrop-blur-xl;
+    background: hsl(var(--card) / 0.7);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+  
+  .dark .glass {
+    background: hsl(var(--card) / 0.5);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+  
+  /* Subtle gradient divider */
+  .gradient-divider {
+    @apply h-px w-full;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--border)),
+      hsl(var(--primary) / 0.3),
+      hsl(var(--border)),
+      transparent
+    );
+  }
+  
+  /* Contact icon glow effect */
+  .icon-glow {
+    box-shadow: 
+      0 0 0 1px hsl(var(--border)),
+      0 4px 20px -4px hsl(var(--background));
+    transition: all 0.3s ease;
+  }
+  
+  .icon-glow:hover {
+    box-shadow: 
+      0 0 0 1px hsl(var(--primary) / 0.5),
+      0 8px 30px -4px hsl(var(--primary) / 0.3);
   }
 }

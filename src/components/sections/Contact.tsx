@@ -37,8 +37,13 @@ export function Contact() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="contact" className="section-padding" ref={ref}>
-      <div className="container mx-auto max-w-4xl text-center">
+    <section id="contact" className="section-padding relative overflow-hidden" ref={ref}>
+      {/* Subtle background glow for contact section */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-gradient-radial from-primary/5 to-transparent opacity-50" />
+      </div>
+      
+      <div className="container relative mx-auto max-w-4xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -74,7 +79,7 @@ export function Contact() {
               transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
               whileHover={{ scale: 1.1, y: -5 }}
               whileTap={{ scale: 0.95 }}
-              className={`group flex h-16 w-16 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-lg hover:shadow-primary/20 ${link.mobileOnly ? "md:hidden" : ""}`}
+              className={`icon-glow group flex h-16 w-16 items-center justify-center rounded-full border border-border/50 bg-card/50 text-muted-foreground backdrop-blur-sm transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground ${link.mobileOnly ? "md:hidden" : ""}`}
               aria-label={link.label}
             >
               <link.icon className="h-6 w-6" />
@@ -82,13 +87,14 @@ export function Contact() {
           ))}
         </motion.div>
 
-        {/* Footer */}
+        {/* Footer with gradient divider */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-20 border-t border-border pt-8"
+          className="mt-20"
         >
+          <div className="gradient-divider mb-8" />
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Ranjith S. Built with passion and code.
           </p>

@@ -7,7 +7,12 @@ export function About() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="section-padding" ref={ref}>
+    <section id="about" className="section-padding relative" ref={ref}>
+      {/* Subtle decorative element */}
+      <div className="absolute left-0 right-0 top-0 pointer-events-none">
+        <div className="gradient-divider" />
+      </div>
+      
       <div className="container mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -66,6 +71,11 @@ export function About() {
             of creating something from nothing and seeing it work.
           </p>
         </motion.div>
+      </div>
+      
+      {/* Bottom decorative element */}
+      <div className="absolute left-0 right-0 bottom-0 pointer-events-none">
+        <div className="gradient-divider" />
       </div>
     </section>
   );

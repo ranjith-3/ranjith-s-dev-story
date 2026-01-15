@@ -21,7 +21,7 @@ export function Education() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="section-padding bg-secondary/30" ref={ref}>
+    <section className="section-padding section-bg-elevated" ref={ref}>
       <div className="container mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -44,7 +44,7 @@ export function Education() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.15 }}
               whileHover={{ y: -3 }}
-              className="flex w-full max-w-sm items-center gap-4 rounded-xl border border-border bg-card p-5 transition-all hover:border-primary/50"
+              className="flex w-full max-w-sm items-center gap-4 rounded-xl border border-border/50 bg-card/50 p-5 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-card/80"
             >
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                 <edu.icon className="h-6 w-6 text-primary" />

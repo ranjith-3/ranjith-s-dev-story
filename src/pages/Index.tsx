@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import { BackgroundEffects } from "@/components/BackgroundEffects";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Skills } from "@/components/sections/Skills";
@@ -10,16 +11,19 @@ import { Contact } from "@/components/sections/Contact";
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background">
-      <Navigation />
-      <Hero />
-      <About />
-      <Skills />
-      <Experience />
-      <Projects />
-      <Achievements />
-      <Education />
-      <Contact />
+    <main className="relative min-h-screen">
+      <BackgroundEffects />
+      <div className="relative z-10">
+        <Navigation />
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Achievements />
+        <Education />
+        <Contact />
+      </div>
     </main>
   );
 };

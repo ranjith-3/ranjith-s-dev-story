@@ -12,32 +12,81 @@ export function Hero() {
 
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4">
-      {/* Animated background elements */}
+      {/* Enhanced background elements */}
       <div className="absolute inset-0 overflow-hidden">
+        {/* Geometric grid lines - subtle tech pattern */}
+        <div className="absolute inset-0">
+          <svg className="h-full w-full opacity-[0.03] dark:opacity-[0.06]" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="hero-grid" width="80" height="80" patternUnits="userSpaceOnUse">
+                <path d="M 80 0 L 0 0 0 80" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-foreground" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#hero-grid)" />
+          </svg>
+        </div>
+        
+        {/* Abstract flowing lines - data flow inspired */}
         <motion.div
-          className="absolute -right-40 -top-40 h-96 w-96 rounded-full bg-primary/10 blur-3xl"
+          className="absolute left-1/4 top-1/3 h-px w-32 bg-gradient-to-r from-transparent via-primary/30 to-transparent"
           animate={{
-            scale: [1, 1.2, 1],
+            x: [0, 100, 0],
+            opacity: [0, 0.6, 0],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute right-1/4 top-2/3 h-px w-48 bg-gradient-to-r from-transparent via-primary/20 to-transparent"
+          animate={{
+            x: [0, -80, 0],
+            opacity: [0, 0.5, 0],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
+        />
+        
+        {/* Primary gradient orb - top right */}
+        <motion.div
+          className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-gradient-radial from-primary/15 via-primary/5 to-transparent blur-3xl"
+          animate={{
+            scale: [1, 1.15, 1],
+            opacity: [0.4, 0.6, 0.4],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        
+        {/* Secondary gradient orb - bottom left */}
+        <motion.div
+          className="absolute -bottom-32 -left-32 h-[400px] w-[400px] rounded-full bg-gradient-radial from-primary/10 via-primary/3 to-transparent blur-3xl"
+          animate={{
+            scale: [1.15, 1, 1.15],
             opacity: [0.3, 0.5, 0.3],
           }}
           transition={{
-            duration: 8,
+            duration: 12,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         />
-        <motion.div
-          className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-primary/10 blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.5, 0.3, 0.5],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
+        
+        {/* Subtle center highlight */}
+        <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial from-primary/5 to-transparent opacity-50" />
+        
+        {/* Corner accents - architectural feel */}
+        <div className="absolute left-8 top-32 h-24 w-px bg-gradient-to-b from-transparent via-primary/20 to-transparent opacity-40" />
+        <div className="absolute right-8 bottom-32 h-24 w-px bg-gradient-to-b from-transparent via-primary/20 to-transparent opacity-40" />
       </div>
 
       <div className="container relative z-10 mx-auto text-center">

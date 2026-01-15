@@ -33,7 +33,7 @@ export function Experience() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="experience" className="section-padding" ref={ref}>
+    <section id="experience" className="section-padding relative" ref={ref}>
       <div className="container mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -49,8 +49,10 @@ export function Experience() {
         </motion.div>
 
         <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-8 top-0 hidden h-full w-0.5 bg-border md:block" />
+          {/* Timeline line with gradient */}
+          <div className="absolute left-8 top-0 hidden h-full w-px md:block">
+            <div className="h-full w-full bg-gradient-to-b from-primary/50 via-border to-border" />
+          </div>
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (
@@ -61,11 +63,13 @@ export function Experience() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 className="relative"
               >
-                {/* Timeline dot */}
-                <div className="absolute left-6 top-0 hidden h-4 w-4 rounded-full border-4 border-primary bg-background md:block" />
+                {/* Timeline dot with glow */}
+                <div className="absolute left-6 top-0 hidden md:block">
+                  <div className="h-4 w-4 rounded-full border-4 border-primary bg-background shadow-lg shadow-primary/20" />
+                </div>
 
                 <div className="ml-0 md:ml-20">
-                  <div className="rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg">
+                  <div className="rounded-xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-card/80 hover:shadow-lg hover:shadow-primary/5">
                     <div className="mb-4 flex items-start gap-4">
                       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                         <exp.icon className="h-6 w-6 text-primary" />

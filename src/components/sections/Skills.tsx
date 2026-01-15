@@ -41,7 +41,7 @@ export function Skills() {
   };
 
   return (
-    <section id="skills" className="section-padding bg-secondary/30" ref={ref}>
+    <section id="skills" className="section-padding section-bg-elevated" ref={ref}>
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -67,7 +67,7 @@ export function Skills() {
               key={category.title}
               variants={itemVariants}
               transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-              className="rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg"
+              className="group rounded-xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm transition-all hover:border-primary/30 hover:bg-card/80 hover:shadow-lg hover:shadow-primary/5"
             >
               <h4 className="mb-4 text-lg font-semibold text-foreground">
                 {category.title}
@@ -83,7 +83,7 @@ export function Skills() {
                       delay: categoryIndex * 0.1 + skillIndex * 0.05,
                     }}
                     whileHover={{ scale: 1.05, y: -2 }}
-                    className="rounded-full bg-secondary px-3 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                    className="rounded-full bg-secondary/80 px-3 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
                   >
                     {skill}
                   </motion.span>
